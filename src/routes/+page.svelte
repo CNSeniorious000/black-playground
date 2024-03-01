@@ -20,8 +20,29 @@
 </script>
 
 <div class="mx-4vmin mt-4vmin h-[calc(100vh-8vmin)] max-w-450 w-[calc(100vw-8vmin)] flex flex-col gap-[min(4vmin,1.5rem)] lg:(flex-row gap-2vmin)">
-  <Editor bind:source />
-  <Editor bind:source={output} derived />
+  <div class="h-1/2 flex flex-col gap-2.5 lg:h-full lg:w-1/2 sm:gap-1">
+    <header class="flex flex-row justify-between">
+      <div class="translate-y-0.5 select-none sm:-translate-y-1.5">
+        <h1 class="text-3xl font-fancy">black</h1>
+        <h2 class="whitespace-nowrap text-xs font-bold tracking-wide capitalize op-30 <sm:hidden">the uncompromising python code formatter</h2>
+      </div>
+      <nav class="h-fit flex flex-row gap-2 [&>a,button]:(rounded-md bg-white/5 p-2.5 text-lg outline-none transition sm:p-3) [&>a:hover,button:hover]:(bg-white/10)">
+        <a href="https://github.com/psf/black">
+          <div class="i-uiw-github" />
+        </a>
+        <a href="https://black.readthedocs.io/">
+          <div class="i-cib-read-the-docs" />
+        </a>
+        <button aria-label="options" type="button">
+          <div class="i-fluent-settings-32-filled" />
+        </button>
+      </nav>
+    </header>
+    <Editor bind:source />
+  </div>
+  <div class="h-1/2 lg:h-full lg:w-1/2">
+    <Editor bind:source={output} derived />
+  </div>
 </div>
 
 <Modal show={!$pyodideReady}>

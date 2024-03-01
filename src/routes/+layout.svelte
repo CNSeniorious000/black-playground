@@ -8,7 +8,7 @@
 
   const headScripts = atob(env.PUBLIC_HEAD_SCRIPTS ?? "")
 
-  const ogTitle = "Black Playground"
+  const ogTitle = "Black Interactive Playground"
   const ogImage = `${$page.url.origin}/og${$page.url.pathname}`
   const ogDescription = "Learn black code style right in your browser"
 </script>

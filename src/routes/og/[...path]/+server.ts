@@ -5,7 +5,7 @@ import { ImageResponse } from "@ethercorps/sveltekit-og"
 
 export const GET: RequestHandler = async ({ url: { origin }, params: { path } }) => {
   const context = {
-    title: "black playground",
+    title: "black interactive playground",
     subtitle: "the uncompromising code formatter",
     href: `${origin}/${decodeURI(path ?? "")}`,
   }

@@ -48,4 +48,4 @@
   $: derived && editor?.setValue(source)
 </script>
 
-<div bind:this={container} class="h-full w-full overflow-hidden b-1 b-white/10 rounded-md" />
+<div bind:this={container} class="h-full overflow-hidden b-1 b-white/10 rounded-md" />
