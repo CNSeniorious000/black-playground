@@ -8,7 +8,7 @@
 
 {#if show}
   <slot>
-    <div class="fixed inset-0 grid place-items-center">
+    <div class="fixed inset-0 z-100 grid place-items-center">
       <slot name="content" />
     </div>
   </slot>
