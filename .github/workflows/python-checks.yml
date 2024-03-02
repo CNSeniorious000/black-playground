@@ -1,4 +1,4 @@
-name: python examples checks
+name: python checks
 
 on: [push, pull_request]
 
@@ -13,7 +13,7 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: |
-          pip install isort black pyodide-py
+          pip install isort black pyodide-py micropip
           yarn global add pyright
       - name: Run isort check
         run: |

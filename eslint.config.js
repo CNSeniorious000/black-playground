@@ -15,5 +15,6 @@ export default antfu({
     "import/order": "off",
     "svelte/no-at-html-tags": "off",
     "no-console": "warn",
+    "no-self-assign": "off",
   },
 })
