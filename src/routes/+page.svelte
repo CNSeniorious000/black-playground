@@ -46,8 +46,23 @@
     </header>
     <Editor bind:source />
   </div>
-  <div class="h-1/2 lg:h-full lg:w-1/2">
+  <div class="h-1/2 flex flex-col lg:(h-full w-1/2 gap-2.5)">
     <Editor bind:source={output} derived />
+    <footer class="flex flex-row select-none justify-between text-xs text-neutral-7 <lg:hidden [&_a:hover]:text-white [&_a]:(text-neutral-4 transition-color)">
+      <div class="flex flex-row gap-1">
+        <a href="https://black.readthedocs.io/en/stable/the_black_code_style">
+          black code style
+        </a>
+        |
+        <a href="https://github.com/CNSeniorious000/black-playground">
+          playground repo
+        </a>
+      </div>
+      <div>
+        Playground built by
+        <a href="https://github.com/CNSeniorious000">Muspi Merol</a>
+      </div>
+    </footer>
   </div>
 </div>
 
