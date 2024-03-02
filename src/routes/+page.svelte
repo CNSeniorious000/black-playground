@@ -46,12 +46,8 @@
 </div>
 
 <Modal show={!$pyodideReady}>
-  <svelte:fragment slot="content">
-    {#await Promise.resolve() then _}
-      <div in:scale={{ easing: cubicOut, start: 0.85 }} out:scale|global={{ easing: cubicIn, start: 0.9 }} class="flex flex-row items-center gap-2 rounded-lg bg-neutral-7/20 p-3.5 text-white/70 backdrop-blur-md">
-        <div class="i-svg-spinners-90-ring-with-bg text-lg md:text-lg" />
-        <div class="text-sm md:text-base">loading python runtime ...</div>
-      </div>
-    {/await}
-  </svelte:fragment>
+  <div slot="content" in:scale={{ easing: cubicOut, start: 0.85 }} out:scale|global={{ easing: cubicIn, start: 0.9 }} class="flex flex-row items-center gap-2 rounded-lg bg-neutral-7/20 p-3.5 text-white/70 backdrop-blur-md">
+    <div class="i-svg-spinners-90-ring-with-bg text-lg md:text-lg" />
+    <div class="text-sm md:text-base">loading python runtime ...</div>
+  </div>
 </Modal>
