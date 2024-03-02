@@ -2,7 +2,7 @@ import { pyodideReady } from "../stores"
 import { cacheSingleton } from "../utils/cache"
 import { dev } from "$app/environment"
 
-const indexURL = dev ? "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/" : "/pyodide/"
+const indexURL = (dev || !process.env.NETLIFY) ? "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/" : "/pyodide/"
 
 async function initPyodide() {
   const { loadPyodide } = await import("pyodide")
