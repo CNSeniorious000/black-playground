@@ -3,19 +3,22 @@
   import { browser } from "$app/environment"
   import Editor from "$lib/components/Editor.svelte"
   import Modal from "$lib/components/Modal.svelte"
+  import Regenerate from "$lib/components/Regenerate.svelte"
   import Settings from "$lib/components/Settings.svelte"
   import example from "$lib/example.txt?raw"
   import { pyodideReady } from "$lib/stores"
   import { cubicIn, cubicOut } from "svelte/easing"
   import { scale } from "svelte/transition"
 
-  export let source = example
+  let source = example
 
   let options = defaultOptions
 
   let showSettings = false
 
   let output = ""
+
+  let generating = false
 
   async function update(source: string, options: Options) {
     const { format } = await import("../lib/format")
@@ -26,7 +29,7 @@
 </script>
 
 <div class="mx-4vmin mt-4vmin h-[calc(100vh-8vmin)] max-w-450 w-[calc(100vw-8vmin)] flex flex-col gap-[min(4vmin,1.5rem)] lg:(flex-row gap-2vmin)">
-  <div class="h-1/2 flex flex-col gap-2.5 lg:h-full lg:w-1/2 sm:gap-1">
+  <div class="relative h-1/2 flex flex-col gap-2.5 lg:h-full lg:w-1/2 sm:gap-1">
     <header class="flex flex-row justify-between">
       <div class="translate-y-0.5 select-none sm:-translate-y-1.5">
         <h1 class="text-3xl font-fancy">black</h1>
@@ -44,7 +47,8 @@
         </button>
       </nav>
     </header>
-    <Editor bind:source />
+    <Editor bind:source derived={generating} />
+    <Regenerate bind:source bind:generating />
   </div>
   <div class="h-1/2 flex flex-col lg:(h-full w-1/2 gap-2.5)">
     <Editor bind:source={output} derived />

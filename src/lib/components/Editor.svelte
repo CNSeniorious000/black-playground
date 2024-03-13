@@ -37,7 +37,7 @@
       cursorSmoothCaretAnimation: "explicit",
       renderLineHighlight: "all",
       renderLineHighlightOnlyWhenFocus: true,
-      padding: { top: 24 },
+      padding: { top: 24, bottom: derived ? 0 : 24 },
       scrollBeyondLastLine: false,
       automaticLayout: true,
     })

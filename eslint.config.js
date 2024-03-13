@@ -16,5 +16,6 @@ export default antfu({
     "svelte/no-at-html-tags": "off",
     "no-console": "warn",
     "no-self-assign": "off",
+    "ts/no-redeclare": "warn",
   },
 })

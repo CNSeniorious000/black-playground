@@ -1,13 +1,14 @@
 import { pyodideReady } from "../stores"
 import { cacheSingleton } from "../utils/cache"
 import { dev } from "$app/environment"
+import * as env from "$env/static/public"
 
 const indexURL = dev ? "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/" : "/pyodide/"
 
-async function initPyodide() {
+export const initPyodide = cacheSingleton(async () => {
   const { loadPyodide } = await import("pyodide")
-  return await loadPyodide({ indexURL, packages: ["micropip"] })
-}
+  return await loadPyodide({ indexURL, packages: ["micropip"], env: { ...env } })
+})
 
 async function initPy() {
   const [py, { default: initCode }] = await Promise.all([initPyodide(), import("./init.py?raw")])
