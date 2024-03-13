@@ -45,7 +45,12 @@
     editor.onDidChangeModelContent(() => (source = editor.getValue()))
   })
 
-  $: derived && editor?.setValue(source)
+  let last = source
+
+  $: if (derived && editor && last !== source) {
+    editor.setValue(source)
+    last = source
+  }
 </script>
 
 <div bind:this={container} class="h-full overflow-hidden b-1 b-white/10 rounded-md" />
