@@ -10,7 +10,7 @@
   async function regenerate() {
     generating = true
 
-    for await (const context of makeSource(source)) source = context.result.replaceAll("\r\n", "\n").replace(/```.*?(?:\n([\s\S]*?))?(\n```|$)/, "$1")
+    for await (const context of makeSource(source)) source = context.result.replaceAll("\r\n", "\n").replace(/```.*(?:\n([\s\S]*?))?(\n```|$)/, "$1")
 
     generating = false
   }
