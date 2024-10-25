@@ -3,7 +3,7 @@ import { cacheSingleton } from "../utils/cache"
 import { dev } from "$app/environment"
 import * as env from "$env/static/public"
 
-const indexURL = dev ? "https://cdn.jsdelivr.net/pyodide/v0.26.1/full/" : "/pyodide/v0.26.1/"
+const indexURL = dev ? "https://cdn.jsdelivr.net/pyodide/v0.26.3/full/" : "/pyodide/v0.26.3/"
 
 export const initPyodide = cacheSingleton(async () => {
   const { loadPyodide } = await import("pyodide")
