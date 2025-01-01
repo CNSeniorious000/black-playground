@@ -1,1 +1,1 @@
-/pyodide/v0.26.4/* https://cdn.jsdelivr.net/pyodide/v0.26.4/full/:splat 200
+/pyodide/:version/* https://cdn.jsdelivr.net/pyodide/:version/full/:splat 200
