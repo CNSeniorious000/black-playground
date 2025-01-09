@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/pyodide/v0.26.1/:path*",
-      "destination": "https://cdn.jsdelivr.net/pyodide/v0.26.1/full/:path*"
+      "source": "/pyodide/:version/:path*",
+      "destination": "https://cdn.jsdelivr.net/pyodide/:version/full/:path*"
     }
   ]
 }
