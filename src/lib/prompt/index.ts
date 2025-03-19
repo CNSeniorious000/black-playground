@@ -47,5 +47,5 @@ export async function* makeSource(previous_source: string) {
   const [_, { default: template }] = await Promise.all([ensurePromplate(), import("./template.j2?raw")])
   const generate = AsyncGenerate()
   const node = Node(template)
-  yield * node.astream({ previous_source }, generate)
+  yield* node.astream({ previous_source }, generate)
 }
