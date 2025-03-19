@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { type Options, defaultOptions } from "../lib/format"
+  import type { Options } from "../lib/format"
+
+  import { defaultOptions } from "../lib/format"
   import { browser } from "$app/environment"
   import Editor from "$lib/components/Editor.svelte"
   import Modal from "$lib/components/Modal.svelte"
