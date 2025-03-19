@@ -24,7 +24,7 @@
     "@unocss/eslint-config": "^66.0.0",
     "@unocss/extractor-svelte": "^66.0.0",
     "@unocss/reset": "^66.0.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.22.0",
     "eslint-plugin-format": "^0.1.0",
     "eslint-plugin-svelte": "^2.35.1",
     "monaco-editor-core": "^0.52.0",
