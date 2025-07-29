@@ -18,4 +18,9 @@ export default antfu({
     "no-self-assign": "off",
     "ts/no-redeclare": "warn",
   },
+  overrides: {
+    svelte: {
+      "import/no-mutable-exports": "off",
+    },
+  },
 })
